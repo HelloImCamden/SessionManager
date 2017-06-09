@@ -1,0 +1,9 @@
+div.sessionContent(id=typeof(item['sessionId']) != 'undefined' ? item['sessionId'] : {}, class=item['enrolled'] == true ? "enrolled" : "", class=item['compulsory'] == true ? "compulsory" : "", class=item['sessionFull'] == true ? "session-full" : "")
+	div.title= (typeof(item['title']) != 'undefined' ? item['title'] : {})
+	div.teacher Teacher:  
+		= (typeof(item['tFname']) != 'undefined' ? item['tFname'] : {}) 
+		= (typeof(item['tSname']) != 'undefined' ? item['tSname'] : {})
+	div.location Location: 
+		= (typeof(item['location']) != 'undefined' ? item['location'] : {})						
+	div.description Description: 
+		= (typeof(item['description']) != 'undefined' ? item['description'] : {})

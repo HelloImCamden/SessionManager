@@ -1,0 +1,10 @@
+- user = typeof(udata) != 'undefined' ? udata : {}
+
+nav.navbar.navbar-default
+	.container
+		.navbar-header
+			.navbar-brand Welcome #{user}
+		ul.nav.navbar-nav.navbar-right
+			li
+				.navbar-btn#btn-logout.btn.btn-default
+					| Sign Out

@@ -1,0 +1,69 @@
+extends layout
+
+block content
+
+	include nav
+	include banner
+
+	// preset form values if we receive a userdata object //
+	- s1data = typeof(s1data) != 'undefined' ? s1data : {}
+	- s2data = typeof(s2data) != 'undefined' ? s2data : {}
+	- s3data = typeof(s3data) != 'undefined' ? s3data : {}
+	- s4data = typeof(s4data) != 'undefined' ? s4data : {}
+	- user = typeof(user) != 'undefined' ? user : {}
+
+	// Content Section Starts Here
+	div.mainContainer
+		ul.nav.nav-tabs
+			li.active#session-1-btn
+				a(href="#Session1") Session 1
+			li#session-2-btn
+				a(href="#Session2") Session 2
+			li#session-3-btn
+				a(href="#Session3") Session 3
+			li#session-4-btn 
+				a(href="#Session4") Session 4
+	
+	div.mainContainer
+		div.tabcontent.active-panel#session-1-tab
+			div.teacher-form-panel.form-group#session-form-1
+				form(id="s-session-1", method="post")
+					h3 Session 1 - Friday, June 23rd, Afternoon
+					- for item in s1data
+						include session-box
+					button.btn.btn-save
+						| Save
+		div.tabcontent#session-2-tab
+			div.teacher-form-panel.form-group#session-form-2
+				form(id="s-session-2", method="post")
+					h3 Session 2 - Monday, June 27th, Morning
+					- for item in s2data
+						include session-box
+					button.btn.btn-save
+						| Save
+		div.tabcontent#session-3-tab
+			div.teacher-form-panel.form-group#session-form-3
+				form(id="s-session-3", method="post")
+					h3 Session 3 - Monday, June 27th - Afternoon
+					- for item in s3data
+						include session-box
+					button.btn.btn-save
+						| Save
+		div.tabcontent#session-4-tab
+			div.teacher-form-panel.form-group#session-form-4
+				form(id="s-session-4", method="post")
+					h3 Session 4 - Tuesday, June 28th - Morning
+					- for item in s4data
+						include session-box
+					button.btn.btn-save
+						| Save
+
+	include modals/alert
+
+block scripts
+	script(src='/vendor/jquery-2.2.3.min.js')
+	script(src='/vendor/jquery.form.min.js')
+	script(src='/vendor/bootstrap.min.js')
+	script(src='/js/views/student.js')
+	script(src='/js/controllers/homeController.js')
+	script(src='/js/form-validators/sessionValidator.js')

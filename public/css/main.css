@@ -1,0 +1,75 @@
+.mainContainer {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.banner {
+	text-align: center;
+}
+
+.img {
+
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.active-panel {
+  display: visible;
+}
+
+/* Student Session List Styling */
+
+.sessionContent {
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-bottom: 15px;
+	padding: 10px;
+}
+
+.title {
+	font-size: 2.5em
+}
+
+.teacher {
+	font-weight: bold;
+
+}
+
+.location {
+
+}
+
+.description {
+
+}
+
+.max {
+
+}
+
+.enrolled {
+	background-color: #a7f1a7;
+	border: 1px solid #ccc;
+}
+
+.compulsory {
+	background-color: #ff9933;
+	border: 1px solid #ccc;
+}
+
+.active-session {
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	border: 3px solid #778899;
+}
+
+.session-full {
+	background-color: #AAAFB4;	
+}

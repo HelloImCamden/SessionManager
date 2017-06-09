@@ -1,0 +1,134 @@
+extends layout
+
+block content
+
+	include nav
+	include banner
+
+	div.mainContainer
+		ul.nav.nav-tabs
+			li.active#session-1-btn
+				a(href="#Session1") Session 1
+			li#session-2-btn
+				a(href="#Session2") Session 2
+			li#session-3-btn
+				a(href="#Session3") Session 3
+			li#session-4-btn 
+				a(href="#Session4") Session 4
+	
+	// preset form values if we receive a userdata object //
+	- s1data = typeof(s1data) != 'undefined' ? s1data : {}
+	- s2data = typeof(s2data) != 'undefined' ? s2data : {}
+	- s3data = typeof(s3data) != 'undefined' ? s3data : {}
+	- s4data = typeof(s4data) != 'undefined' ? s4data : {}
+
+	// store the userId on the client side in a hidden input field //
+	div.mainContainer
+		div.tabcontent.active-panel#session-1-tab
+			div.teacher-form-panel.form-group#session-form-1
+				form(id="t-session-1", method="post")
+					h3 Session 1
+					input(type='hidden', value=(typeof(s1data['sessionId']) != 'undefined' ? s1data['sessionId'] : {}))#sessionId
+					.form-group
+						label Session Title
+						input.form-control(type="text", name="session-title", value=(typeof(s1data['title']) != 'undefined' ? s1data['title'] : {}), placeholder="Please enter the name of your session")
+					.form-group
+						label Location
+						input.form-control(type="text", name="location", value=(typeof(s1data['location']) != 'undefined' ? s1data['location'] : {}), placeholder="Where do you plan to host the session")
+					.form-group
+						label Maximum Students
+						input.form-control(type="text", name="max-students", value=(typeof(s1data['max']) != 'undefined' ? s1data['max'] : {}), placeholder="30", maxlength="3")
+					.form-group
+						label Description
+						textarea.form-control(id="desc", rows="8", placeholder="Please write a description of the session that will be available for students.")= typeof(s1data['description']) != 'undefined' ? s1data['description'] : { }
+					.form-group
+						label Resource Request
+						textarea.form-control(id="resource", rows="8", placeholder="Please list resources, with approximate cost, that you would like to make your session successful.")= typeof(s1data['resources']) != 'undefined' ? s1data['resources'] : {}
+					.form-group
+						label Additional Information
+						textarea.form-control(id="extra", rows="8", placeholder="Please provide any extra information that will be useful in planning and implementation of your session for students. Do students require any specific clothing or equipment for your session?")= typeof(s1data['extra']) != 'undefined' ? s1data['extra'] : {}
+					button.btn.btn-save
+						| Save
+		div.tabcontent#session-2-tab
+			div.teacher-form-panel.form-group#session-form-2
+				form(id="t-session-2", method="post")
+					h3 Session 2
+					input(type='hidden', value=(typeof(s2data['sessionId']) != 'undefined' ? s2data['sessionId'] : {}))#sessionId
+					.form-group
+						label Session Title
+						input.form-control(type="text", name="session-title", value=(typeof(s2data['title']) != 'undefined' ? s2data['title'] : {}), placeholder="Please enter the name of your session")
+					.form-group
+						label Location
+						input.form-control(type="text", name="location", value=(typeof(s2data['location']) != 'undefined' ? s2data['location'] : {}), placeholder="Where do you plan to host the session")
+					.form-group
+						label Maximum Students
+						input.form-control(type="text", name="max-students", value=(typeof(s2data['max']) != 'undefined' ? s2data['max'] : {}), placeholder="30", maxlength="3")
+					.form-group
+						label Description
+						textarea.form-control(id="desc", rows="8", placeholder="Please write a description of the session that will be available for students.")= typeof(s2data['description']) != 'undefined' ? s2data['description'] : {}
+					.form-group
+						label Resource Request
+						textarea.form-control(id="resource", rows="8", placeholder="Please list resources, with approximate cost, that you would like to make your session successful.")= typeof(s2data['resources']) != 'undefined' ? s2data['resources'] : {}
+					.form-group
+						label Additional Information
+						textarea.form-control(id="extra", rows="8", placeholder="Please provide any extra information that will be useful in planning and implementation of your session for students. Do students require any specific clothing or equipment for your session?")= typeof(s2data['extra']) != 'undefined' ? s2data['extra'] : {}
+					button.btn.btn-save
+						| Save
+		div.tabcontent#session-3-tab
+			div.teacher-form-panel.form-group#session-form-3
+				form(id="t-session-3", method="post")
+					h3 Session 3
+					input(type='hidden', value=(typeof(s3data['sessionId']) != 'undefined' ? s3data['sessionId'] : {}))#sessionId
+					.form-group
+						label Session Title
+						input.form-control(type="text", name="session-title", value=(typeof(s3data['title']) != 'undefined' ? s3data['title'] : {}), placeholder="Please enter the name of your session")
+					.form-group
+						label Location
+						input.form-control(type="text", name="location", value=(typeof(s3data['location']) != 'undefined' ? s3data['location'] : {}), placeholder="Where do you plan to host the session")
+					.form-group
+						label Maximum Students
+						input.form-control(type="text", name="max-students", value=(typeof(s3data['max']) != 'undefined' ? s3data['max'] : {}), placeholder="30", maxlength="3")
+					.form-group
+						label Description
+						textarea.form-control(id="desc", rows="8", placeholder="Please write a description of the session that will be available for students.")= typeof(s3data['description']) != 'undefined' ? s3data['description'] : {}
+					.form-group
+						label Resource Request
+						textarea.form-control(id="resource", rows="8", placeholder="Please list resources, with approximate cost, that you would like to make your session successful.")= typeof(s3data['resources']) != 'undefined' ? s3data['resources'] : {}
+					.form-group
+						label Additional Information
+						textarea.form-control(id="extra", rows="8", placeholder="Please provide any extra information that will be useful in planning and implementation of your session for students. Do students require any specific clothing or equipment for your session?")= typeof(s3data['extra']) != 'undefined' ? s3data['extra'] : {}
+					button.btn.btn-save
+						| Save
+		div.tabcontent#session-4-tab
+			div.teacher-form-panel.form-group#session-form-4
+				form(id="t-session-4", method="post")
+					h3 Session 4
+					input(type='hidden', value=(typeof(s4data['sessionId']) != 'undefined' ? s4data['sessionId'] : {}))#sessionId
+					.form-group
+						label Session Title
+						input.form-control(type="text", name="session-title", value=(typeof(s4data['title']) != 'undefined' ? s4data['title'] : {}), placeholder="Please enter the name of your session")
+					.form-group
+						label Location
+						input.form-control(type="text", name="location", value=(typeof(s4data['location']) != 'undefined' ? s4data['location'] : {}), placeholder="Where do you plan to host the session")
+					.form-group
+						label Maximum Students
+						input.form-control(type="text", name="max-students", value=(typeof(s4data['max']) != 'undefined' ? s4data['max'] : {}), placeholder="30", maxlength="3")
+					.form-group
+						label Description
+						textarea.form-control(id="desc", rows="8", placeholder="Please write a description of the session that will be available for students.")= typeof(s4data['description']) != 'undefined' ? s4data['description'] : {}
+					.form-group
+						label Resource Request
+						textarea.form-control(id="resource", rows="8", placeholder="Please list resources, with approximate cost, that you would like to make your session successful.")= typeof(s4data['resources']) != 'undefined' ? s4data['resources'] : {}
+					.form-group
+						label Additional Information
+						textarea.form-control(id="extra", rows="8", placeholder="Please provide any extra information that will be useful in planning and implementation of your session for students. Do students require any specific clothing or equipment for your session?")= typeof(s4data['extra']) != 'undefined' ? s4data['extra'] : {}
+					button.btn.btn-save
+						| Save
+
+
+block scripts
+	script(src='/vendor/jquery-2.2.3.min.js')
+	script(src='/vendor/jquery.form.min.js')
+	script(src='/vendor/bootstrap.min.js')
+	script(src='/js/views/teacher.js')
+	script(src='/js/controllers/homeController.js')
